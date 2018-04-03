@@ -9,22 +9,18 @@
  *     Guillaume Coutable - Initial implementation
  **************************************************************************/
 
-const mutationSchema = `
-type Mutation {
-    createNewUser(newUser: NewUser!): User
-    createNewRole(newRole: NewRole!): Role
-}
+const LocalStrategy = require('passport-local').Strategy;
+const bcrypt = require('bcrypt-nodejs');
 
-input NewUser {
-    username: String!
-    email: String!
-    password: String!
-    role: Role!
-}
+const executeExpression = require('./services/common/executeExpression');
 
-input NewRole {
-    roleName: String!
-}
-`;
+/**
+ * Retrieves the user and its permissions using its username.
+ * 
+ * @param {*} db The connection to the database
+ * @param {string} username The username
+ * @return The user and its permissions
+ */
+const getUserByUserName = (db, username) => {
 
-module.exports = mutationSchema;
+};

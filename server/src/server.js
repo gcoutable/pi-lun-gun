@@ -12,6 +12,7 @@
 const fs = require('fs');
 const express = require('express');
 const bodyParser = require('body-parser');
+const passport = require('passport');
 const session = require('express-session');
 const uuid = require('uuid');
 const graphqlServerExpress = require('graphql-server-express');
@@ -20,6 +21,7 @@ const cors = require('cors');
 const pgp = require('pg-promise')(/*options*/);
 
 
+// const authenticationInitializer = require('./authentication');
 const configuration = require('./configuration');
 const resolversInitializer = require('./resolvers');
 const schemaInitializer = require('./schema');
@@ -39,12 +41,16 @@ const app = express();
 
 app.use('*', cors({ origin: 'http://localhost:3000', credentials: true }));
 
+// authenticationInitializer(passport, db);
+
 app.use(session({
     genid: (req) => uuid.v4(),
     secret: 'wushu',
     saveUninitialized: false,
     resave: false
 }));
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 //------- Declare Graphql endpoints
 app.use('/graphql', bodyParser.json(), graphqlServerExpress.graphqlExpress(request => ({

@@ -9,22 +9,10 @@
  *     Guillaume Coutable - Initial implementation
  **************************************************************************/
 
-const mutationSchema = `
-type Mutation {
-    createNewUser(newUser: NewUser!): User
-    createNewRole(newRole: NewRole!): Role
-}
+const getRoleFromResult = (result) => {
+  return {
+      rolename: result.rolename
+  };
+};
 
-input NewUser {
-    username: String!
-    email: String!
-    password: String!
-    role: Role!
-}
-
-input NewRole {
-    roleName: String!
-}
-`;
-
-module.exports = mutationSchema;
+module.exports = getRoleFromResult;

@@ -13,13 +13,6 @@ const userSchema = `
 type User {
     username: String!
 }
-
-enum Role {
-    ALL,
-    TRAINER,
-    ADMIN,
-    MEMBER
-}
 `;
 
 module.exports = userSchema;

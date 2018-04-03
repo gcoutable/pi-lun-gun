@@ -10,7 +10,7 @@
  **************************************************************************/
 
  /**
-  * Creates a user from the given row.
+  * Retrieves the user from the given row.
   * 
   * @param result The result retrieved from the database
   * @return A new user

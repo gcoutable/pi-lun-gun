@@ -9,10 +9,15 @@
  *     Guillaume Coutable - Initial implementation
  **************************************************************************/
 
+const createNewRole = require('../services/roles/createNewRole');
 const createNewUser = require('../services/users/createNewUser');
 
 module.exports = (db) => {
     const mutationResolvers = {};
+
+    mutationResolvers.createNewRole = (root, args) => {
+        return createNewRole(db, args.newRole);
+    };
 
     mutationResolvers.createNewUser = (root, args) => {
         return createNewUser(db, args.newUser);

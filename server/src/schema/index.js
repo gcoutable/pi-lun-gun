@@ -13,10 +13,12 @@ const graphqlTools = require('graphql-tools');
 
 const mutationSchema = require('./mutation-schema');
 const querySchema = require('./query-schema');
+const roleSchema = require('./role-schema');
 const userSchema = require('./user-schema');
 
 const typeDefs = `
 ${userSchema}
+${roleSchema}
 
 ${mutationSchema}
 ${querySchema}
