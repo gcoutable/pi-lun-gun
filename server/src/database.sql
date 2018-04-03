@@ -13,7 +13,7 @@ INSERT INTO roles (rolename, description)
 VALUES ('TRAINER', 'Role used to represent the trainer.'),
 ('ADMIN', 'Role used to represent the administrator.'),
 ('MEMBER', 'Role used to represent the member of the association.'),
-('COMMAND_MANAGER', 'Role used to represent the ones who are managing commands.'),
+('ORDER_MANAGER', 'Role used to represent the ones who are managing orders.'),
 ('SECRETARY', 'Role used to represent the secretary.'),
 ('PARENT', 'Role used to represent a users that have children.');
 
