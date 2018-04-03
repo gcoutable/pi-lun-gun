@@ -22,6 +22,14 @@ CREATE TABLE users (
     username TEXT NOT NULL CONSTRAINT username_length CHECK (char_length(username) > 3)
 );
 
+CREATE TABLE children (
+    parent_id TEXT NOT NULL,
+    child_id TEXT NOT NULL,
+    FOREIGN KEY (parent_id) REFERENCES users(user_id),
+    FOREIGN KEY (child_id) REFERENCES users(user_id),
+    UNIQUE (child_id)
+);
+
 CREATE TABLE user_roles (
     user_id TEXT NOT NULL,
     rolename TEXT NOT NULL,
